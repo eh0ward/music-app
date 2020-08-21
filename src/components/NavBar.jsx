@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <div>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className="navBar">
           <Typography variant="title" color="inherit">
             Music App
           </Typography>

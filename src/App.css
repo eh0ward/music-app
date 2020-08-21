@@ -2,6 +2,38 @@
   text-align: center;
 }
 
+.navBar {
+  background-color: rgb(26, 25, 25);
+}
+
+/* #root {
+  background-color: rgb(26, 25, 25);
+} */
+
+.fields {
+  text-align: center;
+}
+
+.username {
+  color: white;
+  margin-top: 10px;
+}
+
+.password {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.login {
+  background-color: transparent;
+  margin-right: 125px;
+  text-decoration-line: underline;
+  text-decoration-color: white;
+  /* background-color: blue;
+  margin-left: 875px;
+  margin-right: 875px; */
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
