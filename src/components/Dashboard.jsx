@@ -3,19 +3,34 @@ import OnlineComponent from "./OnlineComponent";
 
 class Dashboard extends Component {
   state = {
-    // online: false,
     notifications: [],
+    isOnline: false,
   };
 
   handleChange = (e) => {
-    // this.setState({ online: !this.online });
     this.setState({ notifications: [] });
+  };
+
+  handleSwitch = () => {
+    this.setState({ isOnline: !this.state.isOnline });
+    this.handleNotifications();
+  };
+
+  handleNotifications = () => {
+    let notification = "You're offline";
+    this.setState({
+      notifications: [...this.state.notifications, notification],
+    });
   };
 
   render() {
     return (
       <div>
-        <OnlineComponent switch={this.handleChangle} />
+        <OnlineComponent
+          handleChange={this.handleChange}
+          handleSwitch={this.handleSwitch}
+          handleNotifications={this.handleNotifications}
+        />
       </div>
     );
   }
