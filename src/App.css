@@ -6,26 +6,37 @@
   background-color: rgb(26, 25, 25);
 }
 
-/* #root {
-  background-color: rgb(26, 25, 25);
-} */
+#root {
+  background-color: rgba(26, 25, 25, 0.577);
+}
 
-/* const useStyles = makeStyles({
-  //   root: {
-  //     minWidth: 275,
-  //   },
-  //   bullet: {
-  //     display: "inline-block",
-  //     margin: "0 2px",
-  //     transform: "scale(0.8)",
-  //   },
-  //   title: {
-  //     fontSize: 14,
-  //   },
-  //   pos: {
-  //     marginBottom: 12,
-  //   },
-  // }); */
+.container {
+  display: flex;
+  flex-flow: row;
+}
+
+.friends {
+  display: flex;
+  flex-direction: row;
+}
+
+.onlineCard {
+  max-height: 300px;
+}
+
+.audioCard {
+  max-height: 300px;
+}
+
+#volumeCard {
+  max-height: 300px;
+}
+
+.pic {
+  background-image: url(./images/Screen\ Shot\ 2020-08-30\ at\ 11.11.41\ PM.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .fields {
   text-align: center;
@@ -46,9 +57,7 @@
   margin-right: 125px;
   text-decoration-line: underline;
   text-decoration-color: white;
-  /* background-color: blue;
-  margin-left: 875px;
-  margin-right: 875px; */
+  color: aliceblue;
 }
 
 .App-logo {

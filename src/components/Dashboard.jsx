@@ -1,11 +1,18 @@
 import React, { Component } from "react";
-import OnlineComponent from "./OnlineComponent";
+import OnlineCard from "./OnlineComponent";
+import VolumeCard from "./VolumeComponent";
+import AudioCard from "./AudioComponent";
+import ActiveFriends from "./FriendsComponent";
 
 class Dashboard extends Component {
-  state = {
-    notifications: [],
-    isOnline: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      notifications: [],
+      isOnline: false,
+      profilePic: [],
+    };
+  }
 
   handleChange = (e) => {
     this.setState({ notifications: [] });
@@ -23,14 +30,47 @@ class Dashboard extends Component {
     });
   };
 
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData() {
+    fetch("https://randomuser.me/api?results=7")
+      .then((response) => response.json())
+      .then((parsedJSON) =>
+        parsedJSON.results.map((user) => ({
+          picture: `${user.picture.thumbnail}`,
+        }))
+      )
+      .then((profilePic) =>
+        this.setState({
+          profilePic,
+        })
+      )
+      .catch((error) => console.log("parsing failed", error));
+  }
+
   render() {
+    const { profilePic } = this.state;
     return (
-      <div>
-        <OnlineComponent
-          handleChange={this.handleChange}
-          handleSwitch={this.handleSwitch}
-          handleNotifications={this.handleNotifications}
-        />
+      <div className="container">
+        <div className="container">
+          <OnlineCard
+            handleChange={this.handleChange}
+            handleSwitch={this.handleSwitch}
+            handleNotifications={this.handleNotifications}
+          />
+        </div>
+        <div className="container">
+          <VolumeCard />
+        </div>
+        <div className="container">
+          <AudioCard />
+        </div>
+        <div className="pic"></div>
+        <div className="friends">
+          <ActiveFriends key={profilePic} fetchData={this.fetchData} />
+        </div>
       </div>
     );
   }
