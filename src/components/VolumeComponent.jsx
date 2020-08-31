@@ -35,15 +35,15 @@ export default function VolumeCard() {
 
   if (value >= 80) {
     warning =
-      "Listening to music at a high volume could cause long-term hearing loss";
+      "Listening to music at a high volume could cause long-term hearing loss.";
   } else {
     warning = "";
   }
 
   return (
-    <Card id="volumeCard" className={classes.root}>
-      <CardContent>
-        <Typography id="continuous-slider" gutterBottom>
+    <Card className={classes.root}>
+      <CardContent className="card-color">
+        <Typography className="text-color" id="continuous-slider" gutterBottom>
           <h1>Volume</h1>
           <p>{warning}</p>
         </Typography>

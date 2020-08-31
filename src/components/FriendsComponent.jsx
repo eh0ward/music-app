@@ -52,6 +52,12 @@ const friends = [
     secondary: "EYE ON IT - PARTYNEXTDOOR",
     person: "/static/images/avatar/1.jpg",
   },
+  {
+    id: 7,
+    primary: "Digg H.",
+    secondary: "Do You Realize?? - The Flaming Lips",
+    person: "/static/images/avatar/1.jpg",
+  },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -90,11 +96,16 @@ export default function ActiveFriends(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-      <Paper square className={classes.paper}>
-        <Typography className={classes.text} variant="h5" gutterBottom>
-          <h2>Friend Activity</h2>
+      <Paper square className={classes.paper} id="color">
+        <Typography
+          id="text-color"
+          className={classes.text}
+          variant="h5"
+          gutterBottom
+        >
+          <h3>Friend Activity</h3>
         </Typography>
-        <List className={classes.list}>
+        <List id="list-color" className={classes.list}>
           {friends.map(({ id, primary, secondary, profilePic }) => (
             <React.Fragment key={id}>
               <ListItem button>

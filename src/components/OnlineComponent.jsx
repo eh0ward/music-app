@@ -27,14 +27,14 @@ export default function OnlineCard() {
   }
 
   return (
-    <Card className="onlineCard">
-      <CardContent>
-        <Typography color="textPrimary">
+    <Card>
+      <CardContent className="card-color">
+        <Typography color="textPrimary" id="text-color">
           <h1>{mode}</h1>
           <p>{content}</p>
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions className="card-color">
         <Switch
           checked={state.online}
           onChange={handleChange}

@@ -54,20 +54,21 @@ class Dashboard extends Component {
     const { profilePic } = this.state;
     return (
       <div className="container">
-        <div className="container">
+        <div className="onlineCard">
           <OnlineCard
             handleChange={this.handleChange}
             handleSwitch={this.handleSwitch}
             handleNotifications={this.handleNotifications}
           />
         </div>
-        <div className="container">
+        <div className="volumeCard">
           <VolumeCard />
         </div>
-        <div className="container">
+        <div className="audioCard">
           <AudioCard />
         </div>
         <div className="pic"></div>
+        <div className="pic2"></div>
         <div className="friends">
           <ActiveFriends key={profilePic} fetchData={this.fetchData} />
         </div>

@@ -41,16 +41,17 @@ export default function AudioCard() {
   }
 
   return (
-    <Card className="audioCard">
-      <CardContent>
-        <Typography gutterBottom>
+    <Card>
+      <CardContent className="card-color">
+        <Typography id="text-color" gutterBottom>
           <h1>Audio Quality</h1>
           <p>{warning}</p>
         </Typography>
 
         <FormControl variant="filled" className={classes.formControl}>
-          <InputLabel>Quality</InputLabel>
+          <InputLabel id="text-color">Quality</InputLabel>
           <Select
+            id="text-color"
             className={classes.dropDown}
             value={quality}
             onChange={handleChange}
