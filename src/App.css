@@ -48,16 +48,19 @@ h3 {
 .onlineCard {
   grid-column: 1;
   grid-row: 1 / 2;
+  border: solid white 5px;
 }
 
 .volumeCard {
   grid-column: 1;
   grid-row: 2 / 3;
+  border: solid white 5px;
 }
 
 .audioCard {
   grid-column: 1;
   grid-row: 3 / 3;
+  border: solid white 5px;
 }
 
 .pic {
